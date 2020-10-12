@@ -8,9 +8,7 @@
 </head>
 
 <body>
-  @for($i = 0; $i
-
-  < count($texts); $i++) <p>{{ $texts[$i] }}</p> @endfor
+  <p>{{$title[0]}}</p>
 </body>
 
 </html>

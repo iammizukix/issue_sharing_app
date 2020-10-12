@@ -10,10 +10,10 @@ class TestController extends Controller
     public function index()
     {
         $goutte = GoutteFacade::request('GET', 'https://chiebukuro.yahoo.co.jp/category');
-        $texts = array();
-        $goutte->filter('.rapid-noclick-resp')->each(function ($node) use (&$texts) {
-            $texts[] = $node->text();
+        $title = array();
+        $goutte->filter('h1')->each(function ($node) use (&$title) {
+            $title[] = $node->text();
         });
-        return view('test', $texts);
+        return view('test', ['title' => $title]);
     }
 }
