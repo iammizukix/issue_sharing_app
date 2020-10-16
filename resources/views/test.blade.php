@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <p>{{$title[0]}}</p>
+  <p></p>
 </body>
 
 </html>

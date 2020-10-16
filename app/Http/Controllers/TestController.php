@@ -11,9 +11,13 @@ class TestController extends Controller
     {
         $goutte = GoutteFacade::request('GET', 'https://chiebukuro.yahoo.co.jp/category');
         $title = array();
-        $goutte->filter('h1')->each(function ($node) use (&$title) {
+        $goutte->filter('div p.ClapLv2CategoryList_Chie-CategoryList__Category0Text__1xqHH')->each(function ($node) use (&$title) {
+            // echo '<pre>';
+            // var_export($node->text());
+            // echo '</pre>';
             $title[] = $node->text();
         });
+
         return view('test', ['title' => $title]);
     }
 }
