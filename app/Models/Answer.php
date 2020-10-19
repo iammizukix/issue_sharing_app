@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     use HasFactory;
+
     public function reply()
     {
-        return $this->hasMany('App\Post');
+        return $this->belongsTo('App\Post');
     }
 }

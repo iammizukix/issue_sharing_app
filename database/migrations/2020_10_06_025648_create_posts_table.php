@@ -20,13 +20,13 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->integer('button');
             $table->text('vocablary');
-            $$table->unsignedInteger('reply_id');  // 追加
+            $table->integer('reply_id');  // 追加
             // 外部キーを追加
             $table->foreign('reply_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $$table->unsignedInteger('user_id');  // 追加
+            $table->integer('user_id');  // 追加
             // 外部キーを追加
             $table->foreign('user_id')
                 ->references('id')

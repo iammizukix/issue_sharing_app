@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\Answer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -30,10 +31,10 @@ class PostFactory extends Factory
             'vocabulary' => $this->faker->word,
             'description' => $this->faker->text,
             'user_id' => function () {
-                return factory(App\Post::class)->create()->id;
+                return Post::factory()->create()->id;
             },
             'reply_id' => function () {
-                return factory(App\Answer::class)->create()->id;
+                return Answer::factory()->create()->id;
             },
         ];
     }
