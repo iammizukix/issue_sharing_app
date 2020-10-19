@@ -12,11 +12,10 @@ class Post extends Model
 
     public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
-
     public function reply()
     {
-        return $this->hasOne('App\Answer');
+        return $this->hasMany('App\Answer');
     }
 }

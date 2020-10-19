@@ -15,13 +15,18 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->text('post_id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->unsignedInteger('post_id');  // 追加
+            // 外部キーを追加
+            $table->foreign('post_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
