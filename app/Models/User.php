@@ -22,7 +22,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'post_id',
     ];
 
     /**
@@ -47,5 +46,9 @@ class User extends Authenticatable
     public function post()
     {
         return $this->hasMany('App\Post');
+    }
+    public function reply()
+    {
+        return $this->hasMany('App\Answer');
     }
 }

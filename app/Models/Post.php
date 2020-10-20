@@ -11,6 +11,16 @@ class Post extends Model
 
     protected $guarded = array('id');
 
+    protected $fillable = [
+        'category',
+        'produce',
+        'description',
+        'button',
+        'vocabulary',
+        'reply_id',
+        'user_id',
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -18,5 +28,9 @@ class Post extends Model
     public function reply()
     {
         return $this->hasMany('App\Answer');
+    }
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
     }
 }

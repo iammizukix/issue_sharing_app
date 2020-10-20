@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Post;
 
 class PostsTableSeeder extends Seeder
 {
@@ -13,7 +14,6 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        // $html = file_get_contents("https://chiebukuro.yahoo.co.jp/category");
-        // echo phpQuery::newDocument($html)->find("#ca_list")->find("a")->text();
+        Post::factory()->count(10)->create();
     }
 }

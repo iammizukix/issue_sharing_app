@@ -15,6 +15,18 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->integer('id');
+            $table->integer('post_id');
+            // 外部キーを追加
+            $table->foreign('post_id')
+                ->references('id')
+                ->on('posts')
+                ->onDelete('cascade');
+            $table->integer('user_id');
+            // 外部キーを追加
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
             $table->text('Reply');
             $table->timestamps('Replied_at');
         });

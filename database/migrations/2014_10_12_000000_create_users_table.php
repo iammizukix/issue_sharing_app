@@ -21,12 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedInteger('post_id');  // 追加
+            // $table->integer('post_id'); s追加
             // 外部キーを追加
-            $table->foreign('post_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+            // $table->foreign('post_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade');
         });
     }
 

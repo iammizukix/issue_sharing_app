@@ -15,17 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->integer('id');
-            $table->text('category');
+            $table->integer('category_id');
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
             $table->integer('produce');
             $table->text('description');
-            $table->integer('button');
-            $table->text('vocablary');
-            $table->integer('reply_id');  // 追加
-            // 外部キーを追加
-            $table->foreign('reply_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+            $table->integer('pressedButton');
+            $table->text('vocabulary');
             $table->integer('user_id');  // 追加
             // 外部キーを追加
             $table->foreign('user_id')
