@@ -22,13 +22,15 @@ class CategoriesTableSeeder extends Seeder
             if ($node->text() == 'このカテゴリすべてのQ&A') {
                 return;
             }
-            $categories[]['ChildName'] = $node->text();
+            // $categories[]['ChildName'] = $node->text();
+            $categories[] = $node->text();
         });
-        //親カテゴリー取得
-        $goutte->filter('div p.ClapLv2CategoryList_Chie-CategoryList__Category0Text__1xqHH')->each(function ($node) use (&$categories) {
-            $categories[]['ParentName'] = $node->text();
-        });
-
-        Category::insert($categories);
+        // //親カテゴリー取得
+        // $goutte->filter('div p.ClapLv2CategoryList_Chie-CategoryList__Category0Text__1xqHH')->each(function ($node) use (&$categories) {
+        //     $categories[]['ParentName'] = $node->text();
+        // });
+        // Category::insert($categories);
+        $times = count($categories);
+        Category::factory()->count($times)->create();
     }
 }

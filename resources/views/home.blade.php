@@ -9,6 +9,39 @@
 </head>
 
 <body>
+  <div class="container">
+
+    <!-- 上部 -->
+    <div class="row">
+      <div class="col-2">●</div>
+      <div class="col-5">サービス名</div>
+      <div class="col-3">検索バー</div>
+      <div class="col-2">メニュー</div>
+    </div>
+
+    <!-- タブのナビバー -->
+    <div class="row">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#!">新着</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!">ビジネスチャンス</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!">ランダム</a>
+        </li>
+      </ul>
+
+      <!-- 投稿内容が繰り返される -->
+      　<div class="tab-content">
+        <div class="tab-pane">
+          <div>投稿内容</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
 

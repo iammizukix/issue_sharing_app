@@ -12,9 +12,7 @@ class Category extends Model
     protected $guarded = array('id');
 
     protected $fillable = [
-        'name',
-        'ParentId',
-        'ChildId',
+        'category',
     ];
 
     public function category()
