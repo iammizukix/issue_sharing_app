@@ -5,42 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Home</title>
+  <title>投稿内容編集</title>
 </head>
 
 <body>
   <div class="container">
-
-    <!-- 上部 -->
-    <div class="row">
-      <div class="col-2">●</div>
-      <div class="col-5">サービス名</div>
-      <div class="col-3">検索バー</div>
-      <div class="col-2">メニュー</div>
-    </div>
-
-    <!-- タブのナビバー -->
-    <div class="row">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#!">新着</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">ビジネスチャンス</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#!">ランダム</a>
-        </li>
-      </ul>
-
-      <!-- 投稿内容が繰り返される -->
-      　<div class="tab-content">
-        <div class="tab-pane">
-          <div>投稿内容</div>
-        </div>
-
+    <form class="row" method="POST">
+      @csrf
+      <h1>内容入力</h1>
+      <!-- カテゴリーセレクトボックス -->
+      <div class="col-12">
+        <select name="category">
+          <option value=""></option>
+        </select>
       </div>
-    </div>
+      <!-- 本文 -->
+      <div class="col-12">
+        <textarea name="description" id="" cols="40" rows="10" placeholder="入力してください"></textarea>
+      </div>
+      <!-- 商品化・サービス化希望チェックボックス -->
+      <div class="col-12">
+        <label for="produce_check">商品化/サービス化を希望しますか？<input type="checkbox" name="produce" value="1" id="produce_check"></label>
+      </div>
+      <!-- 投稿ボタン -->
+      <div class="col-12"><input type="submit" value="投稿する"></div>
+    </form>
   </div>
 
 
